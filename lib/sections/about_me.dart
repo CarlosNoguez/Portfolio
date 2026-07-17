@@ -5,7 +5,6 @@ import 'package:devfolio/models/basic.dart';
 import 'package:devfolio/utils/assets.dart';
 import 'package:jaspr/jaspr.dart';
 
-@client
 class AboutMeSection extends StatelessComponent {
   final About about;
   final Basic basic;

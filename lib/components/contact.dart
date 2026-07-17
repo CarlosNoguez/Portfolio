@@ -1,7 +1,6 @@
 import 'package:devfolio/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 
-@client
 class ContactCard extends StatelessComponent {
   final String icon;
   final String title;

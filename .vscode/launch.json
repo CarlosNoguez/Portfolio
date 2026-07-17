@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "devfolio: servidor (debug)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "cwd": "${workspaceFolder}",
+      "console": "terminal",
+      "env": {
+        "PORT": "8081"
+      }
+    },
+    {
+      "name": "devfolio: servidor (sin depurador)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "cwd": "${workspaceFolder}",
+      "console": "terminal",
+      "noDebug": true,
+      "env": {
+        "PORT": "8081"
+      }
+    }
+  ]
+}

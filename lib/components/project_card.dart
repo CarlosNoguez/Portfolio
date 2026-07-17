@@ -1,7 +1,6 @@
 import 'package:devfolio/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 
-@client
 class ProjectCard extends StatelessComponent {
   final String title;
   final String description;

@@ -2,7 +2,6 @@ import 'package:devfolio/components/app_button.dart';
 import 'package:devfolio/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 
-@client
 class NavBar extends StatelessComponent {
   const NavBar({super.key});
 

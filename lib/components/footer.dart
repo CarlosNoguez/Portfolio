@@ -1,6 +1,5 @@
 import 'package:jaspr/jaspr.dart';
 
-@client
 class Footer extends StatelessComponent {
   const Footer({super.key});
 

@@ -1,7 +1,6 @@
 import 'package:devfolio/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 
-@client
 class AppButton extends StatelessComponent {
   final String label;
   final String href;
