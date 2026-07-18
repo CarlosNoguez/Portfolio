@@ -18,7 +18,7 @@ dev_dependencies:
   lints: ^6.0.0
   jaspr_test: ^0.23.2
 
-  freezed: 3.2.5
+  freezed: ^3.2.6-dev.1
   json_serializable: ^6.11.0
 
 jaspr:
