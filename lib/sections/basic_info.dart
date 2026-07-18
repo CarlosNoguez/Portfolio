@@ -34,7 +34,7 @@ class BasicInfoSection extends StatelessComponent {
         span(classes: 'subtitle', [
           i(classes: 'fa-solid fa-play play-icon', []),
           span(classes: 'dynamic-subtitles', [
-            Component.text('Flutter Enthusiast'),
+            Component.text('Senior Flutter Engineer'),
           ])
         ]),
         div(classes: 'socials', [
