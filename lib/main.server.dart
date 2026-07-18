@@ -26,9 +26,9 @@ void main() {
   // with the provided parameters and components.
   runApp(Document(
     title: 'Carlos Noguez',
-    /// Uncomment this line to deploy on github pages just in case your websit is like https://mhmzdev.github.io/devfolio-jaspr/
-    /// If its on the base repo, then you don't need to do this
-    // base: 'devfolio-jaspr/',
+    // Required for project Pages: https://carlosnoguez.github.io/Portfolio/
+    // Skip this if the site is hosted at the user root (*.github.io).
+    base: 'Portfolio/',
     head: <Component>[
       link(
         href:

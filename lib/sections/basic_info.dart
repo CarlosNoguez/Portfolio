@@ -78,7 +78,7 @@ class BasicInfoSection extends StatelessComponent {
     ),
     css.fontFace(
       family: 'PoppinsBold',
-      url: '/fonts/poppins/Poppins-Bold.ttf',
+      url: 'fonts/poppins/Poppins-Bold.ttf',
     ),
     css('.last-name').styles(
       fontFamily: FontFamily('PoppinsBold'),
