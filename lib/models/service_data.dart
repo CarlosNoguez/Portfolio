@@ -4,7 +4,7 @@ part 'service_data.freezed.dart';
 part 'service_data.g.dart';
 
 @freezed
-class ServiceData with _$ServiceData {
+abstract class ServiceData with _$ServiceData {
   const factory ServiceData({
     required String icon,
     required String title,

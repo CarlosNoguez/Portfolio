@@ -4,7 +4,7 @@ part 'social.freezed.dart';
 part 'social.g.dart';
 
 @freezed
-class Social with _$Social {
+abstract class Social with _$Social {
   const factory Social({
     required String icon,
     required String url,

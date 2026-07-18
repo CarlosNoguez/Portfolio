@@ -4,7 +4,7 @@ part 'work.freezed.dart';
 part 'work.g.dart';
 
 @freezed
-class Work with _$Work {
+abstract class Work with _$Work {
   const factory Work({
     required String image,
     required String url,

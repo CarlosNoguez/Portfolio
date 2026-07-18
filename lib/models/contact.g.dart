@@ -6,18 +6,16 @@ part of 'contact.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ContactImpl _$$ContactImplFromJson(Map<String, dynamic> json) =>
-    _$ContactImpl(
-      icon: json['icon'] as String,
-      title: json['title'] as String,
-      description: json['description'] as String,
-      action: json['action'] as String,
-    );
+_Contact _$ContactFromJson(Map<String, dynamic> json) => _Contact(
+  icon: json['icon'] as String,
+  title: json['title'] as String,
+  description: json['description'] as String,
+  action: json['action'] as String,
+);
 
-Map<String, dynamic> _$$ContactImplToJson(_$ContactImpl instance) =>
-    <String, dynamic>{
-      'icon': instance.icon,
-      'title': instance.title,
-      'description': instance.description,
-      'action': instance.action,
-    };
+Map<String, dynamic> _$ContactToJson(_Contact instance) => <String, dynamic>{
+  'icon': instance.icon,
+  'title': instance.title,
+  'description': instance.description,
+  'action': instance.action,
+};

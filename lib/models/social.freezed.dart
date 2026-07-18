@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,169 +9,272 @@ part of 'social.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Social _$SocialFromJson(Map<String, dynamic> json) {
-  return _Social.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Social {
-  String get icon => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+
+ String get icon; String get url;
+/// Create a copy of Social
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SocialCopyWith<Social> get copyWith => _$SocialCopyWithImpl<Social>(this as Social, _$identity);
 
   /// Serializes this Social to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of Social
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $SocialCopyWith<Social> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Social&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.url, url) || other.url == url));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,icon,url);
+
+@override
+String toString() {
+  return 'Social(icon: $icon, url: $url)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $SocialCopyWith<$Res> {
-  factory $SocialCopyWith(Social value, $Res Function(Social) then) =
-      _$SocialCopyWithImpl<$Res, Social>;
-  @useResult
-  $Res call({String icon, String url});
-}
+abstract mixin class $SocialCopyWith<$Res>  {
+  factory $SocialCopyWith(Social value, $Res Function(Social) _then) = _$SocialCopyWithImpl;
+@useResult
+$Res call({
+ String icon, String url
+});
 
+
+
+
+}
 /// @nodoc
-class _$SocialCopyWithImpl<$Res, $Val extends Social>
+class _$SocialCopyWithImpl<$Res>
     implements $SocialCopyWith<$Res> {
-  _$SocialCopyWithImpl(this._value, this._then);
+  _$SocialCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Social _self;
+  final $Res Function(Social) _then;
 
-  /// Create a copy of Social
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? icon = null,
-    Object? url = null,
-  }) {
-    return _then(_value.copyWith(
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of Social
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? icon = null,Object? url = null,}) {
+  return _then(_self.copyWith(
+icon: null == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
+as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$SocialImplCopyWith<$Res> implements $SocialCopyWith<$Res> {
-  factory _$$SocialImplCopyWith(
-          _$SocialImpl value, $Res Function(_$SocialImpl) then) =
-      __$$SocialImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String icon, String url});
 }
 
-/// @nodoc
-class __$$SocialImplCopyWithImpl<$Res>
-    extends _$SocialCopyWithImpl<$Res, _$SocialImpl>
-    implements _$$SocialImplCopyWith<$Res> {
-  __$$SocialImplCopyWithImpl(
-      _$SocialImpl _value, $Res Function(_$SocialImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of Social
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? icon = null,
-    Object? url = null,
-  }) {
-    return _then(_$SocialImpl(
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [Social].
+extension SocialPatterns on Social {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Social value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Social() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Social value)  $default,){
+final _that = this;
+switch (_that) {
+case _Social():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Social value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Social() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String icon,  String url)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Social() when $default != null:
+return $default(_that.icon,_that.url);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String icon,  String url)  $default,) {final _that = this;
+switch (_that) {
+case _Social():
+return $default(_that.icon,_that.url);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String icon,  String url)?  $default,) {final _that = this;
+switch (_that) {
+case _Social() when $default != null:
+return $default(_that.icon,_that.url);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$SocialImpl implements _Social {
-  const _$SocialImpl({required this.icon, required this.url});
 
-  factory _$SocialImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SocialImplFromJson(json);
+class _Social implements Social {
+  const _Social({required this.icon, required this.url});
+  factory _Social.fromJson(Map<String, dynamic> json) => _$SocialFromJson(json);
 
-  @override
-  final String icon;
-  @override
-  final String url;
+@override final  String icon;
+@override final  String url;
 
-  @override
-  String toString() {
-    return 'Social(icon: $icon, url: $url)';
-  }
+/// Create a copy of Social
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SocialCopyWith<_Social> get copyWith => __$SocialCopyWithImpl<_Social>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SocialImpl &&
-            (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.url, url) || other.url == url));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, icon, url);
-
-  /// Create a copy of Social
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SocialImplCopyWith<_$SocialImpl> get copyWith =>
-      __$$SocialImplCopyWithImpl<_$SocialImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SocialImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$SocialToJson(this, );
 }
 
-abstract class _Social implements Social {
-  const factory _Social(
-      {required final String icon, required final String url}) = _$SocialImpl;
-
-  factory _Social.fromJson(Map<String, dynamic> json) = _$SocialImpl.fromJson;
-
-  @override
-  String get icon;
-  @override
-  String get url;
-
-  /// Create a copy of Social
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SocialImplCopyWith<_$SocialImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Social&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.url, url) || other.url == url));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,icon,url);
+
+@override
+String toString() {
+  return 'Social(icon: $icon, url: $url)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SocialCopyWith<$Res> implements $SocialCopyWith<$Res> {
+  factory _$SocialCopyWith(_Social value, $Res Function(_Social) _then) = __$SocialCopyWithImpl;
+@override @useResult
+$Res call({
+ String icon, String url
+});
+
+
+
+
+}
+/// @nodoc
+class __$SocialCopyWithImpl<$Res>
+    implements _$SocialCopyWith<$Res> {
+  __$SocialCopyWithImpl(this._self, this._then);
+
+  final _Social _self;
+  final $Res Function(_Social) _then;
+
+/// Create a copy of Social
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? icon = null,Object? url = null,}) {
+  return _then(_Social(
+icon: null == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
+as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

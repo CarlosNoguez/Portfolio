@@ -10,7 +10,7 @@ part 'data.freezed.dart';
 part 'data.g.dart';
 
 @freezed
-class Data with _$Data {
+abstract class Data with _$Data {
   const factory Data({
     required Basic basic,
     required List<Social> socials,

@@ -1,5 +1,6 @@
 import 'package:devfolio/components/service_card.dart';
 import 'package:devfolio/models/service_data.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 class ServicesSection extends StatelessComponent {
@@ -10,10 +11,10 @@ class ServicesSection extends StatelessComponent {
   });
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield section(classes: 'services-section', [
+  Component build(BuildContext context) {
+    return section(classes: 'services-section', [
       span(classes: 'title', [
-        text('Every problem has a solution, and I’m here to deliver it'),
+        Component.text('Every problem has a solution, and I’m here to deliver it'),
       ]),
       div(classes: 'section-body', id: 'services', [
         for (final service in services)
@@ -27,25 +28,21 @@ class ServicesSection extends StatelessComponent {
 
   @css
   static final List<StyleRule> styles = [
-    css('.services-section')
-        .flexbox(
-          direction: FlexDirection.column,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.start,
-        )
-        .box(
-          padding: EdgeInsets.symmetric(vertical: 5.vh),
-        ),
-    css('.section-body')
-        .flexbox(
-          direction: FlexDirection.row,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.center,
-          wrap: FlexWrap.wrap,
-        )
-        .box(
-          margin: EdgeInsets.only(top: 50.px),
-          width: 100.percent,
-        ),
+    css('.services-section').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.column,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.start,
+      padding: Padding.symmetric(vertical: 5.vh),
+    ),
+    css('.section-body').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.row,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.center,
+      flexWrap: FlexWrap.wrap,
+      margin: Margin.only(top: 50.px),
+      width: 100.percent,
+    ),
   ];
 }

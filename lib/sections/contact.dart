@@ -1,5 +1,6 @@
 import 'package:devfolio/components/contact.dart';
 import 'package:devfolio/models/contact.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 class ContactSection extends StatelessComponent {
@@ -10,14 +11,14 @@ class ContactSection extends StatelessComponent {
   });
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield section(classes: 'contact-section', [
+  Component build(BuildContext context) {
+    return section(classes: 'contact-section', [
       span(classes: 'title', [
-        text('Let’s get in touch'),
+        Component.text('Let’s get in touch'),
       ]),
-      div(styles: Styles.box(height: 15.px), []),
+      div(styles: Styles(height: 15.px), []),
       span(classes: 'subtitle', [
-        text("To transform your vision into a successful reality"),
+        Component.text("To transform your vision into a successful reality"),
       ]),
       div(classes: 'contact-body', id: 'contact', [
         for (final contact in contacts)
@@ -33,25 +34,21 @@ class ContactSection extends StatelessComponent {
 
   @css
   static final List<StyleRule> styles = [
-    css('.contact-section')
-        .flexbox(
-          direction: FlexDirection.column,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.start,
-        )
-        .box(
-          padding: EdgeInsets.symmetric(vertical: 5.vh, horizontal: 10.vw),
-        ),
-    css('.contact-body')
-        .flexbox(
-          direction: FlexDirection.row,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.center,
-          wrap: FlexWrap.wrap,
-        )
-        .box(
-          margin: EdgeInsets.only(top: 50.px),
-          width: 100.percent,
-        ),
+    css('.contact-section').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.column,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.start,
+      padding: Padding.symmetric(vertical: 5.vh, horizontal: 10.vw),
+    ),
+    css('.contact-body').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.row,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.center,
+      flexWrap: FlexWrap.wrap,
+      margin: Margin.only(top: 50.px),
+      width: 100.percent,
+    ),
   ];
 }

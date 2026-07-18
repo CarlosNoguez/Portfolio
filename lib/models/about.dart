@@ -5,7 +5,7 @@ part 'about.freezed.dart';
 part 'about.g.dart';
 
 @freezed
-class About with _$About {
+abstract class About with _$About {
   const factory About({
     required String description,
     required List<String> tech,

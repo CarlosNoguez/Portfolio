@@ -2,7 +2,7 @@
     "basic": {
         "firstName": "Carlos",
         "lastName": "Noguez",
-        "age": 29,
+        "age": 30,
         "email": "carlosrnoguez@gmail.com",
         "phone": "+54 351 3488479",
         "address": "Cordoba, ARG",
@@ -28,15 +28,16 @@
         }
     ],
     "about": {
-        "heading": "I'm Carlos Noguez, a Flutter Developer, crafting seamless cross-platform experiences for mobile, web, and desktop",
-        "description": "Flutter Developer with 6 years of experience. Passionate about crafting intuitive user interfaces with a strong focus on UI/UX design. I also have 2 years of experience leading Flutter development projects, delivering scalable and efficient solutions. Eager to learn and grow while delivering scalable and efficient solutions.",
+        "heading": "I'm Carlos Noguez, a Senior Software Engineer specialized in Flutter — shipping cross-platform products for fintech, healthcare, and consumer companies",
+        "description": "Senior Software Engineer specialized in Flutter, with 6+ years shipping cross-platform products for fintech, healthcare, and consumer companies across iOS, Android, web, and desktop. Strong background in Clean Architecture, BLoC, and Riverpod; used to leading small teams, making architecture calls, and carrying releases through to the App Store and Google Play. AI tools are part of my daily workflow for debugging, testing, documentation, and code review — architecture and technical decisions stay human-driven.",
         "tech": [
             "Flutter",
             "Dart",
-            "Firebase",
+            "Clean Architecture",
+            "BLoC",
+            "Riverpod",
             "CI/CD",
-            "Crashlytics",
-            "Distribution"
+            "Firebase"
         ],
         "works": []
     },
@@ -47,62 +48,76 @@
         },
         {
             "icon": "images/services/ui.png",
-            "title": "Web/Desktop Development"
+            "title": "Cross-Platform Development"
         },
         {
             "icon": "images/services/rapid.png",
-            "title": "Rapid Prototyping"
+            "title": "Architecture & Leadership"
         },
         {
             "icon": "images/services/blog.png",
-            "title": "Technical Writing"
+            "title": "CI/CD & Release Management"
         },
         {
             "icon": "images/services/open.png",
-            "title": "Open Source - GitHub"
+            "title": "AI-Assisted Development"
         }
     ],
     "projects": [
         {
+            "banner": "images/projects/clarikagroup_cover.jpg",
+            "icon": "images/projects/clarikagroup_logo.jpg",
+            "title": "Clarika",
+            "description": "Led Flutter across two client projects (Leiton, Sipssa): greenfield mobile+web app from architecture to release, CI/CD automation, and health improvements on an existing codebase.",
+            "link": "https://clarikagroup.com/es"
+        },
+        {
+            "banner": "images/projects/banner_ligo.png",
+            "icon": "images/projects/ligo_icon.png",
+            "title": "Ligo",
+            "description": "Led Flutter on B2C/B2B mobile banking apps — payments, card management, banking APIs/SDKs, Clean Architecture standards, mentoring, and release ownership under real transaction load.",
+            "link": "https://ligo.pe/"
+        },
+        {
             "banner": "images/projects/designer.png",
             "icon": "images/projects/greta_logo.png",
             "title": "Leistung Greta",
-            "description": "This company is involved with a medical technology traceability system that streamlines the management of healthcare equipment, automating its lifecycle from acquisition to disposal.",
+            "description": "Lead Flutter on a medical equipment traceability platform — legacy refactor, new services, production reliability, and end-to-end App Store / Google Play releases.",
             "link": "https://leistungargentina.com.ar/es/inicio/"
         },
         {
             "banner": "images/projects/btfbanner.png",
             "icon": "images/projects/btflogo.png",
             "title": "Betterfly",
-            "description": "This company is involved with services like telemedicine, gift cards, financial health tools, health insurance, fitness, meditation and mindfulness.",
+            "description": "Delivered 20+ wellbeing and financial-health screens with business logic in a large multi-team Flutter codebase; partnered with design, reviewed PRs, and kept production stable.",
             "link": "https://betterfly.com/"
         },
         {
             "banner": "images/projects/fadesigner.png",
             "icon": "images/projects/falogo.png",
             "title": "Ultrix Labs LLC",
-            "description": "This company is involved with a software factory, having an end client (HAMA OPCO SPV LIMITED) in the cuisine industry.",
+            "description": "Lead Flutter for an R&D internal app; shipped a shared design-system package and mentored a team of 2 developers.",
             "link": "https://thefoodadvocate.com/"
         },
         {
             "banner": "images/projects/geminusbanner.png",
             "icon": "images/projects/geminuslogo.png",
             "title": "Geminus",
-            "description": "I developed multiple applications for various end clients, as part of a leading software factory. Due to NDA agreements, I am unable to disclose specific details about the projects",
+            "description": "Flutter across Prodismo, Senior Living EAP, and Trivium — features and controllers, push notifications, PubNub chat/calls, UI implementation, and growing test coverage.",
             "link": "https://www.linkedin.com/company/geminus-it/"
         },
         {
             "banner": "images/projects/ccdesigner.png",
             "icon": "images/projects/cclogo.png",
             "title": "Click & Correct",
-            "description": "This client is a director of a prestigious university, with the goal of creating an app for managing tasks and solutions for both students and professors, with the option to receive a small payment.",
+            "description": "Built the product end to end for mobile and web: file/video uploads, localization, push notifications, Stripe with Apple/Google Pay, and store releases.",
             "link": "https://clickandcorrect.fr/"
         },
         {
             "banner": "images/projects/unobanner.png",
             "icon": "images/projects/unologo.png",
             "title": "UnoExpress",
-            "description": "This company is involved in package traceability, managing shipments from the USA to Honduras via air, sea, or road transportation.",
+            "description": "Built package-traceability features for shipments USA–Honduras (air, sea, road), supporting logistics workflows in production.",
             "link": "https://www.unoexpresshn.com/"
         }
     ],

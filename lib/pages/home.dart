@@ -9,6 +9,7 @@ import 'package:devfolio/sections/basic_info.dart';
 import 'package:devfolio/sections/contact.dart';
 import 'package:devfolio/sections/projects.dart';
 import 'package:devfolio/sections/services.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
 class Home extends AsyncStatelessComponent {
@@ -23,10 +24,10 @@ class Home extends AsyncStatelessComponent {
   }
 
   @override
-  Stream<Component> build(BuildContext context) async* {
+  Future<Component> build(BuildContext context) async{
     final data = await fetchData();
 
-    yield div(classes: 'home-body', [
+    return div(classes: 'home-body', [
       NavBar(),
       BasicInfoSection(
         basic: data.basic,
@@ -51,12 +52,9 @@ class Home extends AsyncStatelessComponent {
 
   @css
   static final List<StyleRule> styles = [
-    css('.home-body')
-        .box(
-          width: 100.vw,
-        )
-        .background(
-          color: Colors.black,
-        ),
+    css('.home-body').styles(
+      width: 100.vw,
+      backgroundColor: Colors.black,
+    ),
   ];
 }

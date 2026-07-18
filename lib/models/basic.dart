@@ -4,7 +4,7 @@ part 'basic.freezed.dart';
 part 'basic.g.dart';
 
 @freezed
-class Basic with _$Basic {
+abstract class Basic with _$Basic {
   const factory Basic({
     required String firstName,
     required String lastName,

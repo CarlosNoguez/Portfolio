@@ -3,6 +3,7 @@ import 'package:devfolio/constants/theme.dart';
 import 'package:devfolio/models/about.dart';
 import 'package:devfolio/models/basic.dart';
 import 'package:devfolio/utils/assets.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 class AboutMeSection extends StatelessComponent {
@@ -15,48 +16,48 @@ class AboutMeSection extends StatelessComponent {
   });
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield section(classes: 'about-me-section', [
+  Component build(BuildContext context) {
+    return section(classes: 'about-me-section', [
       span(classes: 'title', id: 'about', [
-        text('About Me'),
+        Component.text('About Me'),
       ]),
-      div(styles: Styles.box(height: 15.px), []),
+      div(styles: Styles(height: 15.px), []),
       span(classes: 'subtitle', [
-        text('Get to know me :)'),
+        Component.text('Get to know me :)'),
       ]),
       div(classes: 'about-section-body', [
         div(classes: 'profile-picture', []),
         div(classes: 'about-details', [
           span(
               classes: 'intro-label',
-              styles: Styles.text(color: themePrimaryColor),
+              styles: Styles(color: themePrimaryColor),
               [
-                text('Who am I?'),
+                Component.text('Who am I?'),
               ]),
           span(classes: 'intro-heading', [
-            text(about.heading),
+            Component.text(about.heading),
           ]),
           span(
               classes: 'intro-details',
-              styles: Styles.text(
+              styles: Styles(
                 color: Colors.lightGrey,
               ),
               [
-                text(about.description),
+                Component.text(about.description),
               ]),
           div(classes: 'divider', []),
           span(
               classes: 'tech-label',
-              styles: Styles.text(color: themePrimaryColor),
+              styles: Styles(color: themePrimaryColor),
               [
-                text('Technologies I have worked with:'),
+                Component.text('Technologies I have worked with:'),
               ]),
           div(classes: 'tech-stack', [
             for (final t in about.tech)
               span([
                 i(classes: 'fa-solid fa-play play-icon', []),
                 span(classes: 'tech-item', [
-                  text(t),
+                  Component.text(t),
                 ]),
               ]),
           ]),
@@ -64,22 +65,22 @@ class AboutMeSection extends StatelessComponent {
           div(classes: 'personal-row', [
             div([
               span(classes: 'personal-label', [
-                text('From: '),
+                Component.text('From: '),
               ]),
               span(classes: 'personal-value', [
-                text(basic.address),
+                Component.text(basic.address),
               ]),
             ]),
             div([
               span(classes: 'personal-label', [
-                text('Email: '),
+                Component.text('Email: '),
               ]),
               span(classes: 'personal-value', [
-                text(basic.email),
+                Component.text(basic.email),
               ]),
             ])
           ]),
-          div(styles: Styles.box(height: 15.px), []),
+          div(styles: Styles(height: 15.px), []),
           // div(classes: 'personal-row', [
           //   div([
           //     span(classes: 'personal-label', [
@@ -98,13 +99,13 @@ class AboutMeSection extends StatelessComponent {
           //     ]),
           //   ])
           // ]),
-          div(styles: Styles.box(height: 25.px), []),
+          div(styles: Styles(height: 25.px), []),
           div(classes: 'work-row', [
             AppButton(
               label: 'RESUME',
               href: basic.resume,
             ),
-            // div(classes: 'divider', styles: Styles.box(width: 80.px), []),
+            // div(classes: 'divider', styles: Styles(width: 80.px), []),
             for (final work in about.works)
               a(classes: 'work-item', href: work.url, target: Target.blank, [
                 img(
@@ -120,143 +121,135 @@ class AboutMeSection extends StatelessComponent {
 
   @css
   static final List<StyleRule> styles = [
-    css('.about-me-section')
-        .flexbox(
-          direction: FlexDirection.column,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.start,
-        )
-        .box(
-          // padding: EdgeInsets.only(top: 5.vh),
-          width: 100.percent,
-        ),
-    css('.play-icon').text(color: themePrimaryColor),
-    css('.title').text(
+    css('.about-me-section').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.column,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.start,
+      // padding: Padding.only(top: 5.vh),
+      width: 100.percent,
+    ),
+    css('.play-icon').styles(color: themePrimaryColor),
+    css('.title').styles(
       fontFamily: FontFamily('Montserrat'),
       fontWeight: FontWeight.w100,
       fontSize: 40.px,
     ),
-    css('.about-section-body')
-        .flexbox(
-          direction: FlexDirection.row,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.center,
-        )
-        .box(
-          margin: EdgeInsets.only(top: 50.px),
-          width: 100.percent,
-        ),
-    css('.profile-picture')
-        .background(
-          image: ImageStyle.url(
-            StaticAssets.coloredImage,
-          ),
-          size: BackgroundSize.cover,
-        )
-        .box(
-          height: 700.px,
-          width: 450.px,
-          margin: EdgeInsets.only(right: 100.px),
-        ),
-    css('.about-details')
-        .flexbox(
-          direction: FlexDirection.column,
-          alignItems: AlignItems.start,
-          justifyContent: JustifyContent.center,
-        )
-        .box(
-          width: 750.px,
-        ),
-    css('.intro-label').text(fontSize: 18.px),
-    css('.intro-heading')
-        .box(
-          margin: EdgeInsets.symmetric(vertical: 15.px),
-        )
-        .text(fontSize: 20.px),
-    css('.intro-details').text(
+    css('.about-section-body').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.row,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.center,
+      margin: Margin.only(top: 50.px),
+      width: 100.percent,
+    ),
+    css('.profile-picture').styles(
+      backgroundImage: ImageStyle.url(
+        StaticAssets.coloredImage,
+      ),
+      backgroundSize: BackgroundSize.cover,
+      height: 700.px,
+      width: 450.px,
+      margin: Margin.only(right: 100.px),
+    ),
+    css('.about-details').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.column,
+      alignItems: AlignItems.start,
+      justifyContent: JustifyContent.center,
+      width: 750.px,
+    ),
+    css('.intro-label').styles(fontSize: 18.px),
+    css('.intro-heading').styles(
+      margin: Margin.symmetric(vertical: 15.px),
+      fontSize: 20.px,
+    ),
+    css('.intro-details').styles(
       lineHeight: 3.vh,
       wordSpacing: 1.5.px,
       color: Colors.lightGrey,
     ),
-    css('.divider')
-        .box(
-          height: 1.px,
-          width: 100.percent,
-          margin: EdgeInsets.symmetric(vertical: 2.vh),
-        )
-        .background(color: Colors.lightGrey),
-    css('.tech-label').text(fontSize: 12.px),
-    css('.tech-stack')
-        .flexbox(
-          direction: FlexDirection.row,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.start,
-          wrap: FlexWrap.wrap,
-        )
-        .box(
-          margin: EdgeInsets.only(top: 15.px),
-        ),
-    css('.tech-item')
-        .box(margin: EdgeInsets.only(right: 12.px, left: 5.px))
-        .text(fontSize: 14.px),
-    css('.personal-label').text(
+    css('.divider').styles(
+      height: 1.px,
+      width: 100.percent,
+      margin: Margin.symmetric(vertical: 2.vh),
+      backgroundColor: Colors.lightGrey,
+    ),
+    css('.tech-label').styles(fontSize: 12.px),
+    css('.tech-stack').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.row,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.start,
+      flexWrap: FlexWrap.wrap,
+      margin: Margin.only(top: 15.px),
+    ),
+    css('.tech-item').styles(
+      margin: Margin.only(right: 12.px, left: 5.px),
+      fontSize: 14.px,
+    ),
+    css('.personal-label').styles(
       fontWeight: FontWeight.bold,
       fontSize: 12.px,
     ),
-    css('.personal-value').text(
+    css('.personal-value').styles(
       fontSize: 12.px,
     ),
-    css('.personal-row').box(width: 100.percent).flexbox(
-          direction: FlexDirection.row,
-          justifyContent: JustifyContent.spaceBetween,
-        ),
-    css('.work-row').box(width: 100.percent).flexbox(
-          direction: FlexDirection.row,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.spaceBetween,
-        ),
+    css('.personal-row').styles(
+      width: 100.percent,
+      display: Display.flex,
+      flexDirection: FlexDirection.row,
+      justifyContent: JustifyContent.spaceBetween,
+    ),
+    css('.work-row').styles(
+      width: 100.percent,
+      display: Display.flex,
+      flexDirection: FlexDirection.row,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.spaceBetween,
+    ),
 
     /// MEDIA QUERIES
     /// For smaller screens
     css.media(MediaQuery.screen(maxWidth: 1350.px), [
-      css('.profile-picture').box(
+      css('.profile-picture').styles(
         maxHeight: 100.percent,
-        margin: EdgeInsets.symmetric(horizontal: 50.px),
+        margin: Margin.symmetric(horizontal: 50.px),
       ),
-      css('.about-details').box(width: 45.vw),
+      css('.about-details').styles(width: 45.vw),
     ]),
 
     css.media(MediaQuery.screen(maxWidth: 1100.px), [
-      css('.profile-picture').box(
+      css('.profile-picture').styles(
         maxHeight: 80.percent,
         width: 400.px,
-        margin: EdgeInsets.symmetric(horizontal: 30.px),
+        margin: Margin.symmetric(horizontal: 30.px),
       ),
-      css('.about-details').box(width: 45.vw),
+      css('.about-details').styles(width: 45.vw),
     ]),
 
     css.media(MediaQuery.screen(maxWidth: 900.px), [
-      css('.about-me-section').box(
-        padding: EdgeInsets.only(top: 3.vh, right: 0.vw),
+      css('.about-me-section').styles(
+        padding: Padding.only(top: 3.vh, right: 0.vw),
       ),
-      css('.about-section-body').flexbox(
-        direction: FlexDirection.column,
+      css('.about-section-body').styles(
+        display: Display.flex,
+        flexDirection: FlexDirection.column,
         alignItems: AlignItems.center,
         justifyContent: JustifyContent.start,
       ),
-      css('.profile-picture')
-          .background(
-            image: ImageStyle.url(
-              StaticAssets.mobileImage,
-            ),
-            size: BackgroundSize.cover,
-          )
-          .box(
-            width: 250.px,
-            height: 250.px,
-          ),
-      css('.about-details')
-          .box(width: 80.percent, margin: EdgeInsets.only(top: 40.px)),
+      css('.profile-picture').styles(
+        backgroundImage: ImageStyle.url(
+          StaticAssets.mobileImage,
+        ),
+        backgroundSize: BackgroundSize.cover,
+        width: 250.px,
+        height: 250.px,
+      ),
+      css('.about-details').styles(
+        width: 80.percent,
+        margin: Margin.only(top: 40.px),
+      ),
     ]),
   ];
 }

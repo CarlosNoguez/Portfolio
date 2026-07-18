@@ -1,6 +1,7 @@
 // import 'package:devfolio/components/app_button.dart';
 import 'package:devfolio/components/project_card.dart';
 import 'package:devfolio/models/project.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 class ProjectsSections extends StatelessComponent {
@@ -11,14 +12,14 @@ class ProjectsSections extends StatelessComponent {
   });
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield section(classes: 'projects-section', [
+  Component build(BuildContext context) {
+    return section(classes: 'projects-section', [
       span(classes: 'title', [
-        text('Portfolio'),
+        Component.text('Portfolio'),
       ]),
-      div(styles: Styles.box(height: 15.px), []),
+      div(styles: Styles(height: 15.px), []),
       span(classes: 'subtitle', [
-        text("Here are a few examples of my work. There are many other projects I’ve been involved in, and I’d be happy to share more about them in a conversation"),
+        Component.text("Here are a few examples of my work. There are many other projects I’ve been involved in, and I’d be happy to share more about them in a conversation"),
       ]),
       div(classes: 'section-body-projects', id: 'projects', [
         for (final project in projects)
@@ -30,7 +31,7 @@ class ProjectsSections extends StatelessComponent {
             url: project.link,
           ),
       ]),
-      div(styles: Styles.box(height: 45.px), []),
+      div(styles: Styles(height: 45.px), []),
       // AppButton(
       //   label: 'See more',
       //   href: 'https://github.com/mhmzdev',
@@ -40,25 +41,21 @@ class ProjectsSections extends StatelessComponent {
 
   @css
   static final List<StyleRule> styles = [
-    css('.projects-section')
-        .flexbox(
-          direction: FlexDirection.column,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.start,
-        )
-        .box(
-          padding: EdgeInsets.symmetric(vertical: 5.vh, horizontal: 10.vw),
-        ),
-    css('.section-body-projects')
-        .flexbox(
-          direction: FlexDirection.row,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.center,
-          wrap: FlexWrap.wrap,
-        )
-        .box(
-          margin: EdgeInsets.only(top: 50.px),
-          width: 100.percent,
-        ),
+    css('.projects-section').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.column,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.start,
+      padding: Padding.symmetric(vertical: 5.vh, horizontal: 10.vw),
+    ),
+    css('.section-body-projects').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.row,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.center,
+      flexWrap: FlexWrap.wrap,
+      margin: Margin.only(top: 50.px),
+      width: 100.percent,
+    ),
   ];
 }

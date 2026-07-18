@@ -1,3 +1,4 @@
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import 'pages/home.dart';
@@ -23,7 +24,7 @@ class AppState extends State<App> {
   }
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
+  Component build(BuildContext context) {
     // This method is rerun every time the component is rebuilt.
     //
     // Each build method can return multiple child components as an [Iterable]. The recommended approach
@@ -31,7 +32,7 @@ class AppState extends State<App> {
     // create and return a [List] here.
 
     // Renders a <div class="main"> html element with children.
-    yield div(classes: 'main', [
+    return div(classes: 'main', [
       Home(),
     ]);
   }
@@ -43,11 +44,11 @@ class AppState extends State<App> {
   @css
   static final styles = [
     css('.main', [
-      css('p').text(color: Colors.white),
-      css('a').text(color: Colors.white),
-      css('h1').text(color: Colors.white),
-      css('h2').text(color: Colors.white),
-      css('span').text(color: Colors.white),
+      css('p').styles(color: Colors.white),
+      css('a').styles(color: Colors.white),
+      css('h1').styles(color: Colors.white),
+      css('h2').styles(color: Colors.white),
+      css('span').styles(color: Colors.white),
     ]),
   ];
 }

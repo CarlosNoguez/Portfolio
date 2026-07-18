@@ -1,4 +1,5 @@
 import 'package:devfolio/constants/theme.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 class ContactCard extends StatelessComponent {
@@ -14,38 +15,34 @@ class ContactCard extends StatelessComponent {
   });
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield a(href: action, target: Target.blank, classes: 'contact-card', [
+  Component build(BuildContext context) {
+    return a(href: action, target: Target.blank, classes: 'contact-card', [
       i(classes: '$icon c-icon', []),
       span(classes: 'c-title', [
-        text(title),
+        Component.text(title),
       ]),
       span(classes: 'c-description', [
-        text(description),
+        Component.text(description),
       ]),
     ]);
   }
 
   @css
   static final List<StyleRule> styles = [
-    css('.contact-card')
-        .text(decoration: TextDecoration.none)
-        .flexbox(
-          direction: FlexDirection.column,
-          alignItems: AlignItems.center,
-          justifyContent: JustifyContent.center,
-        )
-        .box(
-          width: 300.px,
-          height: 150.px,
-          padding: EdgeInsets.all(15.px),
-          radius: BorderRadius.circular(12.px),
-          margin: EdgeInsets.only(top: 25.px, left: 15.px, right: 15.px),
-        )
-        .background(
-          color: themeDarkGreyColor,
-        ),
-    css('.contact-card:hover').box(
+    css('.contact-card').styles(
+      textDecoration: TextDecoration.none,
+      display: Display.flex,
+      flexDirection: FlexDirection.column,
+      alignItems: AlignItems.center,
+      justifyContent: JustifyContent.center,
+      width: 300.px,
+      height: 150.px,
+      padding: Padding.all(15.px),
+      radius: BorderRadius.circular(12.px),
+      margin: Margin.only(top: 25.px, left: 15.px, right: 15.px),
+      backgroundColor: themeDarkGreyColor,
+    ),
+    css('.contact-card:hover').styles(
       shadow: BoxShadow(
         color: themePrimaryColor,
         offsetX: 0.px,
@@ -53,21 +50,18 @@ class ContactCard extends StatelessComponent {
         blur: 8.px,
         spread: 2.px,
       ),
-      transition: Transition('box-shadow', duration: 500),
+      transition: Transition('box-shadow', duration: Duration(milliseconds: 500)),
     ),
-    css('.c-icon').text(
+    css('.c-icon').styles(
       fontSize: 50.px,
       color: themePrimaryColor,
     ),
-    css('.c-title')
-        .text(
-          fontSize: 15.px,
-          color: themePrimaryColor,
-        )
-        .box(
-          margin: EdgeInsets.symmetric(vertical: 15.px),
-        ),
-    css('.c-description').text(
+    css('.c-title').styles(
+      fontSize: 15.px,
+      color: themePrimaryColor,
+      margin: Margin.symmetric(vertical: 15.px),
+    ),
+    css('.c-description').styles(
       fontSize: 12.px,
     ),
   ];
